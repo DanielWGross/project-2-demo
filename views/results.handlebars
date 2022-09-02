@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row row-cols-3 g-4">
+    {{#each books}}
+      <div class="col">
+        <div class="card">
+          <img src={{this.image}} class="card-img-top" id="image-{{this.bookId}}" />
+          <div class="card-body">
+            <h5 class="card-title" id="title-{{this.bookId}}">{{this.title}}</h5>
+            <p class="card-text" id="desc-{{this.bookId}}">{{truncate this.description}}</p>
+            {{#if ../loggedIn}}
+              <button class="btn btn-primary" id="btn-{{this.bookId}}">Save Book!</button>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+{{#if loggedIn}}
+<script src="/js/results.js"></script>
+{{/if}}

@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS google_book;
+CREATE DATABASE google_book;
